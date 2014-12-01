@@ -24,6 +24,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nanotech/jellybeans.vim'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
+" Scalaのシンタックスハイライト
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 
