@@ -86,3 +86,6 @@ alias xcode="open /Applications/Xcode.app/"
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 RPROMPT="${ret_status}[%*]%{$reset_color%}"
 setopt transient_rprompt
+
+# rbenv
+eval "$(rbenv init - zsh)"
