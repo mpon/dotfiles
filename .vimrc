@@ -98,4 +98,8 @@ syntax on
 colorscheme jellybeans
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
+" cocoapodsのsyntax highlight
+au BufRead,BufNewFile Podfile set filetype=ruby
+" Vagrantfileのsyntax highlight
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
 """"""""""""""""""""""""""""""
