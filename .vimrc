@@ -26,6 +26,8 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tpope/vim-fugitive'
 " Scalaのシンタックスハイライト
 NeoBundle 'derekwyatt/vim-scala'
+" Dockerfileのシンタックスハイライト
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 call neobundle#end()
 
