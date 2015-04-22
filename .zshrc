@@ -63,6 +63,7 @@ export PATH="/usr/local/bin:$PATH"
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -89,3 +90,11 @@ setopt transient_rprompt
 
 # rbenv
 eval "$(rbenv init - zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# boot2docker
+if [ "`boot2docker status`" = "running" ]; then
+    eval "$(boot2docker shellinit)"
+fi
