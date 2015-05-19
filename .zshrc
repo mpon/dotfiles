@@ -45,7 +45,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx)
+plugins=(git osx vagrant web-search docker gem npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,3 +98,7 @@ eval "$(direnv hook zsh)"
 if [ "`boot2docker status`" = "running" ]; then
     eval "$(boot2docker shellinit)"
 fi
+
+
+# .zshrc.local
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
