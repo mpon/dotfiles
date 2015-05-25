@@ -28,6 +28,9 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'derekwyatt/vim-scala'
 " Dockerfileのシンタックスハイライト
 NeoBundle 'ekalinin/Dockerfile.vim'
+" markdownのシンタックスハイライト
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
 
@@ -104,4 +107,6 @@ highlight LineNr ctermfg=darkyellow
 au BufRead,BufNewFile Podfile set filetype=ruby
 " Vagrantfileのsyntax highlight
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
+" plasticboy/vim-markdown Disable Folding
+let g:vim_markdown_folding_disabled=1
 """"""""""""""""""""""""""""""
