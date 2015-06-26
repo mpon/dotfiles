@@ -31,6 +31,8 @@ NeoBundle 'ekalinin/Dockerfile.vim'
 " markdownのシンタックスハイライト
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
+" coffeescriptのシンタックスハイライト
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
