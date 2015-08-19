@@ -81,6 +81,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias c="clear"
 alias xcode="open /Applications/Xcode.app/"
+alias grop="git remote prune origin"
 
 
 # prompt
