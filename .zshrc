@@ -102,3 +102,8 @@ fi
 
 # .zshrc.local
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+
+# Golang
+export GOPATH=$HOME/.go
+export PATH="$GOPATH/bin:$PATH"
