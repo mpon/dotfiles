@@ -96,11 +96,6 @@ eval "$(rbenv init - zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
-# boot2docker
-if [ "`boot2docker status`" = "running" ]; then
-    eval "$(boot2docker shellinit)"
-fi
-
 
 # .zshrc.local
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
@@ -109,3 +104,6 @@ fi
 # Golang
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
+
+# docker-machine
+eval "$(docker-machine env dev)"
