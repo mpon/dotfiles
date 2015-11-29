@@ -106,4 +106,6 @@ export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
 
 # docker-machine
-eval "$(docker-machine env dev)"
+if [[ `docker-machine status dev` == "Running" ]]; then
+  eval "$(docker-machine env dev)"
+fi
