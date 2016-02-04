@@ -84,6 +84,7 @@ alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
 alias grop="git remote prune origin"
 alias gcd="git checkout develop"
+alias dmr="docker-machine restart dev"
 
 
 # prompt
