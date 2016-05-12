@@ -85,6 +85,7 @@ alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/L
 alias grop="git remote prune origin"
 alias gcd="git checkout develop"
 alias dmr="docker-machine restart dev"
+alias gmod="git merge origin/develop"
 
 
 # prompt
@@ -107,7 +108,3 @@ eval "$(direnv hook zsh)"
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
 
-# docker-machine
-if [[ `docker-machine status dev` == "Running" ]]; then
-  eval "$(docker-machine env dev)"
-fi
