@@ -45,7 +45,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx vagrant web-search docker gem npm)
+plugins=(git osx web-search docker gem npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,8 +84,6 @@ alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
 alias grop="git remote prune origin"
 alias gcd="git checkout develop"
-alias dmr="docker-machine restart dev"
-alias gmod="git merge origin/develop"
 
 
 # prompt
