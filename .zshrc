@@ -106,3 +106,11 @@ eval "$(direnv hook zsh)"
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
 
+# peco
+function peco-history-selection() {
+  BUFFER=`fc -nl 1 | tail -r  | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
