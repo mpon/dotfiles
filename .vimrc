@@ -33,6 +33,8 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 " coffeescriptのシンタックスハイライト
 NeoBundle 'kchmck/vim-coffee-script'
+" fluentdのシンタックスハイライト
+NeoBundle 'yoppi/fluentd.vim'
 
 call neobundle#end()
 
