@@ -35,6 +35,8 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kchmck/vim-coffee-script'
 " fluentdのシンタックスハイライト
 NeoBundle 'yoppi/fluentd.vim'
+" .lvimrcの読み込み
+NeoBundle 'embear/vim-localvimrc'
 
 call neobundle#end()
 
@@ -113,4 +115,9 @@ au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 " plasticboy/vim-markdown Disable Folding
 let g:vim_markdown_folding_disabled=1
+" fluentdのfiletypeをset
+au BufRead,BufNewFile td-agent.conf set filetype=fluentd
+" .lvimrcを実行する
+let g:localvimrc_persistent=2
+let g:localvimrc_sandbox=0
 """"""""""""""""""""""""""""""
