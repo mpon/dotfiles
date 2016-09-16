@@ -84,7 +84,8 @@ alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
 alias grop="git remote prune origin"
 alias gcd="git checkout develop"
-
+alias drmc='docker rm $(docker ps -q -f status=exited)'
+alias brwe='brew'
 
 # prompt
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
