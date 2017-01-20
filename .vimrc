@@ -38,6 +38,19 @@ NeoBundle 'yoppi/fluentd.vim'
 " .lvimrcの読み込み
 NeoBundle 'embear/vim-localvimrc'
 
+" コード補完
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'rsense/rsense'
+" 静的解析
+NeoBundle 'scrooloose/syntastic'
+" ドキュメント参照
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
+" メソッド定義元へのジャンプ
+NeoBundle 'szw/vim-tags'
+" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
+
 call neobundle#end()
 
 " Required:
@@ -51,6 +64,8 @@ NeoBundleCheck
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
 """"""""""""""""""""""""""""""
+" vim内部で使われる文字エンコーディングをutf-8に設定する
+set encoding=utf-8
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
 set noswapfile
 " カーソルが何行目の何列目に置かれているかを表示する
@@ -103,6 +118,8 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+" 想定される改行コードの指定する
+set fileformats=unix,dos,mac
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
@@ -121,3 +138,30 @@ au BufRead,BufNewFile td-agent.conf set filetype=fluentd
 let g:localvimrc_persistent=2
 let g:localvimrc_sandbox=0
 """"""""""""""""""""""""""""""
+
+
+" -------------------------------
+" Rsense
+" -------------------------------
+let g:rsenseHome = '/usr/local/lib/rsense-0.3'
+let g:rsenseUseOmniFunc = 1
+
+" --------------------------------
+" neocomplete.vim
+" --------------------------------
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
+
+" --------------------------------
+" rubocop
+" --------------------------------
+" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
+" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
+
