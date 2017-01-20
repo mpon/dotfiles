@@ -86,6 +86,7 @@ alias grop="git remote prune origin"
 alias gcd="git checkout develop"
 alias drmc='docker rm $(docker ps -q -f status=exited)'
 alias brwe='brew'
+alias be='bundle exec'
 
 # prompt
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
