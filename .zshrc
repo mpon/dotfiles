@@ -127,3 +127,6 @@ fi
 if [ -f /usr/local/opt/google-cloud-sdk/completion.zsh.inc ]; then
   source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
 fi
+
+# deis
+alias kd="kubectl --namespace=deis"
