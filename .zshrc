@@ -53,6 +53,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -88,6 +90,8 @@ alias gcd="git checkout develop"
 alias drmc='docker rm $(docker ps -q -f status=exited)'
 alias brwe='brew'
 alias be='bundle exec'
+alias ggpusf='git push --force-with-lease -u origin'
+alias ggpushf='git push --force-with-lease -u origin'
 
 # prompt
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
@@ -130,3 +134,14 @@ fi
 
 # deis
 alias kd="kubectl --namespace=deis"
+
+# Kubectl Autocomplete
+source <(kubectl completion zsh)  # setup autocomplete in zsh
+
+# sbt
+export PATH="${HOME}/.sbtenv/bin:${PATH}"
+eval "$(sbtenv init -)"
+
+# visual studio code
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
