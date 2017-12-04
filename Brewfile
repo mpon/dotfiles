@@ -57,6 +57,24 @@ brew "watch"
 brew "wget"
 brew "zsh"
 brew "minio/stable/mc"
+cask "1password"
+cask "iterm2"
+cask "google-chrome"
+cask "clipy"
+cask "slack"
+cask "docker"
+cask "java"
+cask "intellij-idea"
+cask "toggledesktop"
+cask "vlc"
+cask "atom"
+cask "charles"
+cask "coteditor"
+cask "jasper"
+cask "kindle"
+cask "visual-studio-code"
+cask "virtualbox"
+mas "Xcode", id: 497799835
 mas "GarageBand", id: 682658836
 mas "GIF Brewery 3", id: 1081413713
 mas "iMovie", id: 408981434
@@ -72,3 +90,4 @@ mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "TogglDesktop", id: 957734279
 mas "WinArchiver Lite", id: 414855915
+mas "Kobito", id: 896624060
