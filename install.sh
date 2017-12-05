@@ -17,3 +17,8 @@ do
 done
 
 chsh -s "$(which zsh)"
+
+# dein.vim
+mkdir -p $HOME/.vim/bundles
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh
+sh /tmp/installer.sh $HOME/.vim/bundles
