@@ -5,7 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="cloud"
+#ZSH_THEME="cloud"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -93,11 +94,6 @@ alias be='bundle exec'
 alias ggpusf='git push --force-with-lease -u origin'
 alias ggpushf='git push --force-with-lease -u origin'
 
-# prompt
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-RPROMPT="${ret_status}[%*]%{$reset_color%}"
-setopt transient_rprompt
-
 # rbenv
 eval "$(rbenv init - zsh)"
 
@@ -145,3 +141,6 @@ eval "$(sbtenv init -)"
 # visual studio code
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=$JAVA_HOME/bin:$PATH
