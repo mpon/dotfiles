@@ -5,7 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="cloud"
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -82,13 +81,12 @@ export EDITOR='vim'
 #
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
+alias sshconfig="vim ~/.ssh/config"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias c="clear"
 alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
-alias grop="git remote prune origin"
 alias gcd="git checkout develop"
-alias drmc='docker rm $(docker ps -q -f status=exited)'
 alias brwe='brew'
 alias be='bundle exec'
 alias ggpusf='git push --force-with-lease -u origin'
