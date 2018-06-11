@@ -91,6 +91,14 @@ alias brwe='brew'
 alias be='bundle exec'
 alias ggpusf='git push --force-with-lease -u origin'
 alias ggpushf='git push --force-with-lease -u origin'
+alias g='cd $(ghq root)/$(ghq list | peco)'
+alias b='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+alias v='code $(ghq root)/$(ghq list | peco)'
+alias a='atom $(ghq root)/$(ghq list | peco)'
+alias killj="ps -e | grep JapaneseIM | grep -v grep | awk '{print \$1}' | xargs -I{} kill -9 {}"
+alias k='kubectl'
+alias kn='kubens'
+alias gh='hub browse'
 
 # rbenv
 eval "$(rbenv init - zsh)"
@@ -104,7 +112,7 @@ eval "$(direnv hook zsh)"
 
 
 # Golang
-export GOPATH=$HOME/.go
+export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
 # peco
@@ -126,9 +134,6 @@ if [ -f /usr/local/opt/google-cloud-sdk/completion.zsh.inc ]; then
   source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
-# deis
-alias kd="kubectl --namespace=deis"
-
 # Kubectl Autocomplete
 source <(kubectl completion zsh)  # setup autocomplete in zsh
 
@@ -142,3 +147,8 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=$JAVA_HOME/bin:$PATH
+
+# kube-ps1
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
+
