@@ -98,6 +98,8 @@ alias a='atom $(ghq root)/$(ghq list | peco)'
 alias killj="ps -e | grep JapaneseIM | grep -v grep | awk '{print \$1}' | xargs -I{} kill -9 {}"
 alias k='kubectl'
 alias kn='kubens'
+alias kc='kubectx'
+alias ko='kubeon'
 alias gh='hub browse'
 
 # rbenv
@@ -152,3 +154,5 @@ export PATH=$JAVA_HOME/bin:$PATH
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PROMPT='$(kube_ps1)'$PROMPT
 
+# pyenv
+export PATH=$(pyenv root)/shims:$PATH
