@@ -18,9 +18,6 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
 
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
   " Required:
   call dein#end()
   call dein#save_state()
