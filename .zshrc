@@ -48,6 +48,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git osx web-search docker gem npm)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
