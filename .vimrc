@@ -33,3 +33,6 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
+
+set tabstop=2
+set shiftwidth=2
