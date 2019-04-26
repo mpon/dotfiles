@@ -56,6 +56,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -158,5 +159,5 @@ PROMPT='$(kube_ps1)'$PROMPT
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - zsh --no-rehash)"
 fi
