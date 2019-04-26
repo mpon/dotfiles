@@ -94,6 +94,7 @@ cask "1password"
 cask "charles"
 cask "clipy"
 cask "coteditor"
+cask "discord"
 cask "docker"
 cask "google-chrome"
 cask "intellij-idea"
@@ -105,6 +106,7 @@ cask "slack-beta"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
+cask "zoomus"
 mas "GarageBand", id: 682658836
 mas "GIF Brewery 3", id: 1081413713
 mas "iMovie", id: 408981434
