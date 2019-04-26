@@ -146,9 +146,6 @@ source <(kubectl completion zsh)  # setup autocomplete in zsh
 export PATH="${HOME}/.sbtenv/bin:${PATH}"
 eval "$(sbtenv init -)"
 
-# visual studio code
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=$JAVA_HOME/bin:$PATH
