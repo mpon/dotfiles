@@ -48,7 +48,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git osx web-search docker gem npm)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -143,8 +143,8 @@ fi
 source <(kubectl completion zsh)  # setup autocomplete in zsh
 
 # sbt
-export PATH="${HOME}/.sbtenv/bin:${PATH}"
-eval "$(sbtenv init -)"
+#export PATH="${HOME}/.sbtenv/bin:${PATH}"
+#eval "$(sbtenv init -)"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
