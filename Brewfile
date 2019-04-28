@@ -1,10 +1,8 @@
 tap "go-delve/delve"
-tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/versions"
 tap "ksonnet/tap"
 tap "minio/stable"
 tap "weaveworks/tap"
@@ -87,6 +85,7 @@ brew "vim"
 brew "watch"
 brew "wget"
 brew "zsh"
+brew "zsh-syntax-highlighting"
 brew "ksonnet/tap/ks"
 brew "minio/stable/mc"
 brew "weaveworks/tap/eksctl"
@@ -102,8 +101,6 @@ cask "iterm2"
 cask "jasper"
 cask "kindle"
 cask "slack"
-cask "slack-beta"
-cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
 cask "zoomus"
@@ -112,13 +109,10 @@ mas "GIF Brewery 3", id: 1081413713
 mas "iMovie", id: 408981434
 mas "iPhoto", id: 408981381
 mas "Keynote", id: 409183694
-mas "Kobito", id: 896624060
-mas "Microsoft Remote Desktop", id: 715768417
 mas "Monosnap", id: 540348655
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "StuffIt Expander", id: 405580712
-mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "TogglDesktop", id: 957734279
 mas "WinArchiver Lite", id: 414855915
