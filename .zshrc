@@ -96,12 +96,12 @@ alias ggpushf='git push --force-with-lease -u origin'
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias b='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias v='code $(ghq root)/$(ghq list | peco)'
-alias a='atom $(ghq root)/$(ghq list | peco)'
 alias killj="ps -e | grep JapaneseIM | grep -v grep | awk '{print \$1}' | xargs -I{} kill -9 {}"
 alias k='kubectl'
 alias kn='kubens'
 alias kc='kubectx'
 alias ko='kubeon'
+alias kof='kubeoff'
 alias gh='hub browse'
 alias cdr='cd `git rev-parse --show-toplevel`'
 
