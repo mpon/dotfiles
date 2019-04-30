@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx web-search docker gem npm)
+plugins=(git osx docker)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -139,8 +139,14 @@ if [ -f /usr/local/opt/google-cloud-sdk/completion.zsh.inc ]; then
   source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
-# Kubectl Autocomplete
-source <(kubectl completion zsh)  # setup autocomplete in zsh
+# Kubectl Autocomplete lazy load
+function kubectl() {
+    if ! type __start_kubectl >/dev/null 2>&1; then
+        source <(command kubectl completion zsh)
+    fi
+
+    command kubectl "$@"
+}
 
 # sbt
 #export PATH="${HOME}/.sbtenv/bin:${PATH}"
@@ -158,3 +164,9 @@ PROMPT='$(kube_ps1)'$PROMPT
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init - zsh --no-rehash)"
 fi
+
+# zprof
+if (which zprof > /dev/null) ;then
+  zprof | less
+fi
+
