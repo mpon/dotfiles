@@ -104,6 +104,11 @@ alias ko='kubeon'
 alias kof='kubeoff'
 alias gh='hub browse'
 alias cdr='cd `git rev-parse --show-toplevel`'
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 # rbenv
 eval "$(rbenv init - zsh)"
