@@ -179,3 +179,9 @@ if (which zprof > /dev/null) ;then
   zprof | less
 fi
 
+# fzf
+wd() {
+  local dir
+  dir=$(/bin/ls $HOME/work | fzf +m) &&
+  cd "$HOME/work/$dir"
+}
