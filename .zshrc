@@ -90,7 +90,6 @@ alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
 alias gsd="git switch develop"
 alias gsm="git switch master"
-alias brwe='brew'
 alias be='bundle exec'
 alias ggpusf='git push --force-with-lease -u origin'
 alias ggpushf='git push --force-with-lease -u origin'
@@ -130,15 +129,6 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
-
-# peco
-function peco-history-selection() {
-  BUFFER=`fc -nl 1 | tail -r  | awk '!a[$0]++' | peco`
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /usr/local/opt/google-cloud-sdk/path.zsh.inc ]; then
@@ -186,3 +176,5 @@ wd() {
   dir=$(/bin/ls $HOME/work | fzf +m) &&
   cd "$HOME/work/$dir"
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
