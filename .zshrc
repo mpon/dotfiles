@@ -88,27 +88,29 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias c="clear"
 alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
-alias gcd="git checkout develop"
+alias gsd="git switch develop"
+alias gsm="git switch master"
 alias brwe='brew'
 alias be='bundle exec'
 alias ggpusf='git push --force-with-lease -u origin'
 alias ggpushf='git push --force-with-lease -u origin'
-alias g='cd $(ghq root)/$(ghq list | peco)'
-alias b='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
-alias v='code $(ghq root)/$(ghq list | peco)'
+alias g='cd $(ghq root)/$(ghq list | fzf)'
+alias b='hub browse $(ghq list | fzf | cut -d "/" -f 2,3)'
+alias v='code $(ghq root)/$(ghq list | fzf)'
 alias killj="ps -e | grep JapaneseIM | grep -v grep | awk '{print \$1}' | xargs -I{} kill -9 {}"
 alias k='kubectl'
 alias kn='kubens'
 alias kc='kubectx'
 alias ko='kubeon'
 alias kof='kubeoff'
-alias gh='hub browse'
 alias cdr='cd `git rev-parse --show-toplevel`'
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias gbdac='gbda && git prune && git gc'
+alias ghview='gh repo view -w'
 
 # rbenv
 eval "$(rbenv init - zsh)"
