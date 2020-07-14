@@ -176,7 +176,7 @@ fi
 # fzf
 wd() {
   local dir
-  dir=$(/bin/ls $HOME/work | fzf +m) &&
+  dir=$(/bin/ls $HOME/work | fzf)
   cd "$HOME/work/$dir"
 }
 
