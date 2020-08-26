@@ -1,14 +1,26 @@
 # Dotfiles
 
-## install
+## command line toolのインストール
 
-```console
-$ git clone git@github.com:mpon/dotfiles.git
-$ cd dotfiles
-$ ./install.sh
+```bash
+git
+# comman line toolのインストールが促される
 ```
 
-## homebrew
+## hombebrew自体のインストール
 
-* homebrewのインストール
-* `cd dotfiles && brew bundle`
+```bash
+cd
+git clone git@github.com:mpon/dotfiles.git
+cd dotfiles
+./install_homebrew.sh
+brew bundle # 何回かやる必要がある
+```
+
+## install
+
+```bash
+cd ~/dotfiles
+./install.sh
+```
+
