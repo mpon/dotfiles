@@ -26,3 +26,6 @@ sh /tmp/installer.sh $HOME/.vim/bundles
 # fzf
 $(brew --prefix)/opt/fzf/install
 
+# goenv
+git clone https://github.com/syndbg/goenv.git ~/.goenv
+
