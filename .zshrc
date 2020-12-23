@@ -89,7 +89,6 @@ alias c="clear"
 alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
 alias gsd="git switch develop"
-alias gsm="git switch master"
 alias be='bundle exec'
 alias ggpusf='git push --force-with-lease -u origin'
 alias ggpushf='git push --force-with-lease -u origin'
@@ -182,3 +181,13 @@ wd() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# git switch master or main
+gsm() {
+	if [ "$(git branch | grep master)" ]; then
+		git switch master
+  else
+		git switch main
+	fi
+}
+
