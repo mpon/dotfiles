@@ -48,11 +48,15 @@ ZSH_THEME="robbyrussell"
 plugins=(git osx docker)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
-
-export PATH="/usr/local/bin:$PATH"
+if [[ `uname -m` == 'arm64' ]]; then
+	HOMEBREW_BASE_DIR="/opt/homebrew"
+else
+	HOMEBREW_BASE_DIR="/usr/local"
+fi
+source $HOMEBREW_BASE_DIR/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="$HOMEBREW_BASE_DIR/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
@@ -86,7 +90,6 @@ alias zshconfig="vim ~/.zshrc"
 alias sshconfig="vim ~/.ssh/config"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias c="clear"
-alias xcode="open /Applications/Xcode.app/"
 alias xcodeclean="rm -frd ~/Library/Developer/Xcode/DerivedData/* && rm -frd ~/Library/Caches/com.apple.dt.Xcode/*"
 alias gsd="git switch develop"
 alias be='bundle exec'
@@ -129,41 +132,37 @@ export PATH="$GOPATH/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /usr/local/opt/google-cloud-sdk/path.zsh.inc ]; then
-  source '/usr/local/opt/google-cloud-sdk/path.zsh.inc'
+	source '/usr/local/opt/google-cloud-sdk/path.zsh.inc'
+fi
+if [ -f /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ]; then
+	source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f /usr/local/opt/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
+	source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
+fi
+if [ -f /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ]; then
+	source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 fi
 
 # Kubectl Autocomplete lazy load
 function kubectl() {
-    if ! type __start_kubectl >/dev/null 2>&1; then
-        source <(command kubectl completion zsh)
-    fi
-
-    command kubectl "$@"
+	if ! type __start_kubectl >/dev/null 2>&1; then
+		source <(command kubectl completion zsh)
+	fi
+	command kubectl "$@"
 }
 
-# sbt
-#export PATH="${HOME}/.sbtenv/bin:${PATH}"
-#eval "$(sbtenv init -)"
-
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
-export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$HOMEBREW_BASE_DIR/opt/openjdk@11/bin:$PATH"
 
 # kube-ps1
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source "$HOMEBREW_BASE_DIR/opt/kube-ps1/share/kube-ps1.sh"
 PROMPT='$(kube_ps1)'$PROMPT
 
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
-
-# gcloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # zprof
 if (which zprof > /dev/null) ;then
@@ -183,8 +182,10 @@ wd() {
 gsm() {
 	if [ "$(git branch | grep master)" ]; then
 		git switch master
-  else
+	else
 		git switch main
 	fi
 }
 
+# homebrew 
+eval "$($HOMEBREW_BASE_DIR/bin/brew shellenv)"
