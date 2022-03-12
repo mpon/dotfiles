@@ -194,3 +194,4 @@ eval "$($HOMEBREW_BASE_DIR/bin/brew shellenv)"
 # asdf
 . $(brew --prefix asdf)/libexec/asdf.sh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
