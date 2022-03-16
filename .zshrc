@@ -156,7 +156,8 @@ function kubectl() {
 }
 
 # java
-export PATH="$HOMEBREW_BASE_DIR/opt/openjdk@11/bin:$PATH"
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # kube-ps1
 source "$HOMEBREW_BASE_DIR/opt/kube-ps1/share/kube-ps1.sh"
