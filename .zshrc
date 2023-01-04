@@ -113,7 +113,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias gbdac='gbda && git prune && git gc'
-alias ghview='gh repo view -w'
+alias ghview='gh pr view -w'
 
 # rbenv
 eval "$(rbenv init - zsh)"
