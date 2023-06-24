@@ -102,6 +102,7 @@ alias v='code $(ghq root)/$(ghq list | fzf)'
 alias i='idea $(ghq root)/$(ghq list | fzf)'
 alias killj="ps -e | grep JapaneseIM | grep -v grep | awk '{print \$1}' | xargs -I{} kill -9 {}"
 alias k='kubectl'
+alias kb='kustomize build --load-restrictor LoadRestrictionsNone'
 alias kn='kubens'
 alias kc='kubectx'
 alias ko='kubeon'
