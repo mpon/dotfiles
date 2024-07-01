@@ -116,9 +116,6 @@ alias lt='ls --tree'
 alias gbdac='gbda && git prune && git gc'
 alias ghview='gh pr view -w'
 
-# rbenv
-eval "$(rbenv init - zsh)"
-
 # direnv
 eval "$(direnv hook zsh)"
 
