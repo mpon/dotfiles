@@ -129,7 +129,7 @@ cask "docker"
 cask "font-hack-nerd-font"
 cask "google-cloud-sdk"
 cask "zoom"
-cask "zulu11"
+cask "zulu@21"
 mas "CotEditor", id: 1024640650
 mas "Magnet", id: 441258766
 mas "Slack", id: 803453959

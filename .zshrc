@@ -115,6 +115,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias gbdac='gbda && git prune && git gc'
 alias ghview='gh pr view -w'
+alias gbclean='git branch | grep -v $(git_develop_branch) | grep -v $(git_main_branch) | xargs git branch -D'
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -154,7 +155,7 @@ function kubectl() {
 }
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # kube-ps1
